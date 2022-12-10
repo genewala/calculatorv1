@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    
+    
+</head>
+<body>
+    <div>
+         <div class="container">
+         <div class="answer">
+            <div class="answer-top">
+                <input type="text" id="result" class="screen" style="text-align: right;">
+            </div>
+            
+            <div class="answer-buttom">
+                <input type="text" id="myText" class="screen2" >
+                
+            </div>
+        </div>
+        <div button-main>
+            <div class="button-row">
+                <div class="button-row2">
+                    <input type="button" value="C" onclick="clearScreen()" class="merge1"></input>
+                </div>
+                <div class="button-row2">
+                    <input type="button"  class="button1" value="%" onClick="display('%')"></input>
+                    <input type="button"  class="button0" value="/" onClick="display('/')"></input>
+                </div>
+                
+                
+            </div>
+            <div class="button-row">
+                <input type="button" class="button" value="7" onClick="display('7')"></input>
+                <input type="button" class="button" value="8" onClick="display('8')"></input>
+                <input type="button" class="button" value="9" onClick="display('9')"></input>
+                <input type="button" value="*"  class="operator" onClick="display('*')"></input>
+            </div>
+            <div class="button-row">
+                <input type="button" class="button" value="4" onClick="display('4')"></input>
+                <input type="button" class="button" value="5" onClick="display('5')"></input>
+                <input type="button" class="button" value="6" onClick="display('6')"></input>
+                <input type="button" value="-"  class="operator" onClick="display('-')"></input>
+            </div>
+            <div class="button-row">
+                <input type="button" class="button" value="1" onClick="display('1')"></input>
+                <input type="button" class="button" value="2" onClick="display('2')"></input>
+                <input type="button" class="button" value="3" onClick="display('3')"></input>
+                <input type="button" value="+"  class="operator" onClick="display('+')"></input>
+                
+                
+            </div>
+            <div class="button-row">
+                <div class="button-row2">
+                    <input type="button"  value="." class="button1" onClick="display('.')"></input>
+                    <input type="button"  value="0" class="button0" onClick="display('0')"></input>
+                </div>
+                <div class="button-row2">
+                    <input type="button" value="=" class="merge1" onClick="solve()"></input>
+                </div>
+                
+            </div>
+            
+            
+        </div>
+       
+        
+    </div>
+    </div>
+   
+  <script>
+    const myText = document.getElementById("myText");
+    const result = document.getElementById("result");
+    
+    function display(val){
+
+document.getElementById('myText').value += val
+
+return val
+
+}
+
+function solve(){
+
+let x = document.getElementById('myText').value
+
+let y = eval(x);
+
+document.getElementById('result').value = y
+
+return y
+
+}
+function clearScreen(){
+
+document.getElementById('result').value = ''
+document.getElementById('myText').value = ''
+
+}
+function back() {
+    document.getElementById("myText").value = value.substr(0, value.length - 1);
+}
+    
+  </script>
+    
+</body>
+</html>
